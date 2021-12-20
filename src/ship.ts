@@ -3,7 +3,7 @@ import Transporter from "./transporter";
 
 class Ship implements Transporter {
     maxWeight: number;
-    containers: ShippingContainer[];
+    containers: ShippingContainer[] = [];
 
     constructor(maxWeight: number){
         this.maxWeight = maxWeight;
@@ -25,14 +25,14 @@ class Ship implements Transporter {
         return sumOfContainers;
     }    
 
-    // isOverweight(): boolean {
-    //     if ( this.getTotalWeight() > this.maxWeight) {
-    //         return true;
-    //     }
-    //     else {
-    //         return false;
-    //     }
-    // }
+    isOverweight(): boolean {
+        if ( this.getTotalWeight() > this.maxWeight) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
 
 
